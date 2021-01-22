@@ -10,26 +10,41 @@
 		EF122DC12561863600F7995F /* IntroPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF122DC02561863600F7995F /* IntroPageView.swift */; };
 		EF122DC325618F8400F7995F /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF122DC225618F8400F7995F /* TunerView.swift */; };
 		EF3B0E7125606B9E007C6C62 /* Tunemeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3B0E7025606B9E007C6C62 /* Tunemeter.swift */; };
+		EF74385C25B927FA00C884AF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74385B25B927FA00C884AF /* Note.swift */; };
 		EF8862BB255F2FDA00F070E6 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8862BA255F2FDA00F070E6 /* Tuner.swift */; };
+		EFD6C5F225B7FBC6000C4AC2 /* AudioKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD6C5EF25B7FBBB000C4AC2 /* AudioKit.xcframework */; };
 		EFF2E5F8255EFAF30099230F /* TunerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2E5F7255EFAF30099230F /* TunerApp.swift */; };
 		EFF2E5FA255EFAF30099230F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2E5F9255EFAF30099230F /* ContentView.swift */; };
 		EFF2E5FC255EFAFF0099230F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF2E5FB255EFAFF0099230F /* Assets.xcassets */; };
 		EFF2E5FF255EFAFF0099230F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF2E5FE255EFAFF0099230F /* Preview Assets.xcassets */; };
-		EFF2E60A255EFB1B0099230F /* AudioKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFF2E607255EFB150099230F /* AudioKit.xcframework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EFD6C5F425B7FBC6000C4AC2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EF122DC02561863600F7995F /* IntroPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageView.swift; sourceTree = "<group>"; };
 		EF122DC225618F8400F7995F /* TunerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
 		EF3B0E7025606B9E007C6C62 /* Tunemeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tunemeter.swift; sourceTree = "<group>"; };
+		EF74385B25B927FA00C884AF /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EF8862BA255F2FDA00F070E6 /* Tuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
+		EFD6C5EF25B7FBBB000C4AC2 /* AudioKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AudioKit.xcframework; sourceTree = "<group>"; };
 		EFF2E5F4255EFAF30099230F /* Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF2E5F7255EFAF30099230F /* TunerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerApp.swift; sourceTree = "<group>"; };
 		EFF2E5F9255EFAF30099230F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EFF2E5FB255EFAFF0099230F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFF2E5FE255EFAFF0099230F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EFF2E600255EFAFF0099230F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFF2E607255EFB150099230F /* AudioKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AudioKit.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +52,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF2E60A255EFB1B0099230F /* AudioKit.xcframework in Frameworks */,
+				EFD6C5F225B7FBC6000C4AC2 /* AudioKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF74385725B9260900C884AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF8862BA255F2FDA00F070E6 /* Tuner.swift */,
+				EF74385B25B927FA00C884AF /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EF74385825B9260E00C884AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EFF2E5F7255EFAF30099230F /* TunerApp.swift */,
+				EFF2E5F9255EFAF30099230F /* ContentView.swift */,
+				EF122DC02561863600F7995F /* IntroPageView.swift */,
+				EF122DC225618F8400F7995F /* TunerView.swift */,
+				EF3B0E7025606B9E007C6C62 /* Tunemeter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EFF2E5EB255EFAF30099230F = {
 			isa = PBXGroup;
 			children = (
-				EFF2E607255EFB150099230F /* AudioKit.xcframework */,
+				EFD6C5EF25B7FBBB000C4AC2 /* AudioKit.xcframework */,
 				EFF2E5F6255EFAF30099230F /* Tuner */,
 				EFF2E5F5255EFAF30099230F /* Products */,
 			);
@@ -64,15 +100,11 @@
 		EFF2E5F6255EFAF30099230F /* Tuner */ = {
 			isa = PBXGroup;
 			children = (
-				EFF2E5F7255EFAF30099230F /* TunerApp.swift */,
-				EFF2E5F9255EFAF30099230F /* ContentView.swift */,
-				EF122DC02561863600F7995F /* IntroPageView.swift */,
-				EF122DC225618F8400F7995F /* TunerView.swift */,
+				EF74385825B9260E00C884AF /* View */,
+				EF74385725B9260900C884AF /* Model */,
 				EFF2E5FB255EFAFF0099230F /* Assets.xcassets */,
 				EFF2E600255EFAFF0099230F /* Info.plist */,
 				EFF2E5FD255EFAFF0099230F /* Preview Content */,
-				EF3B0E7025606B9E007C6C62 /* Tunemeter.swift */,
-				EF8862BA255F2FDA00F070E6 /* Tuner.swift */,
 			);
 			path = Tuner;
 			sourceTree = "<group>";
@@ -95,6 +127,7 @@
 				EFF2E5F0255EFAF30099230F /* Sources */,
 				EFF2E5F1255EFAF30099230F /* Frameworks */,
 				EFF2E5F2255EFAF30099230F /* Resources */,
+				EFD6C5F425B7FBC6000C4AC2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +189,7 @@
 			files = (
 				EFF2E5FA255EFAF30099230F /* ContentView.swift in Sources */,
 				EF8862BB255F2FDA00F070E6 /* Tuner.swift in Sources */,
+				EF74385C25B927FA00C884AF /* Note.swift in Sources */,
 				EFF2E5F8255EFAF30099230F /* TunerApp.swift in Sources */,
 				EF122DC12561863600F7995F /* IntroPageView.swift in Sources */,
 				EF3B0E7125606B9E007C6C62 /* Tunemeter.swift in Sources */,
@@ -288,6 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tuner/Preview Content\"";
 				DEVELOPMENT_TEAM = AF6W8QRL4J;
 				ENABLE_PREVIEWS = YES;
@@ -297,6 +332,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = "JohnWatson.edo-tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,6 +347,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Tuner/Preview Content\"";
 				DEVELOPMENT_TEAM = AF6W8QRL4J;
 				ENABLE_PREVIEWS = YES;
@@ -320,6 +357,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = "JohnWatson.edo-tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";

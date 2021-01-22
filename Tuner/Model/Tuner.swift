@@ -7,7 +7,8 @@
 
 import AudioKit
 
-class Tuner: ObservableObject {
+// Model for tuner containing AudioKit infrastructure
+public class Tuner: ObservableObject {
     @Published var frequency: Float = 262.0
     @Published var dampedFrequency: Float = 262.0
     var frequencyBuffer = [Float](repeating: 262.0, count: 8)
@@ -24,9 +25,7 @@ class Tuner: ObservableObject {
     var tracker: AKFrequencyTracker!
     var silence: AKBooster!
 
-    init() {
-    }
-    
+    // Setup AudioKit microphone
     func create() {
         AKSettings.audioInputEnabled = true
         let recordingFormat = AKManager.engine.inputNode.inputFormat(forBus: 0);
@@ -37,7 +36,8 @@ class Tuner: ObservableObject {
         
         AKManager.output = silence
     }
-    
+
+    // Start audio manager and polling process
     func start() {
         do {
             try AKManager.start()
@@ -48,6 +48,7 @@ class Tuner: ObservableObject {
         pollingTimer = Timer.scheduledTimer(withTimeInterval: pollingInterval, repeats: true, block: {_ in self.pollingTick()})
     }
     
+    // Start audio manager and polling process
     func stop() {
         do {
             try AKManager.stop()
@@ -60,6 +61,7 @@ class Tuner: ObservableObject {
         }
     }
     
+    // Code run every tick to poll the input audio status
     private func pollingTick() {
         frequency = Float(tracker.frequency)
         updateFrequencyBuffer()

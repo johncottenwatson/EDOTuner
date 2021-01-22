@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+// Size key for using relative geometry within tuner bar
 struct SizeKey: PreferenceKey {
     static func reduce(value: inout CGSize?, nextValue: () -> CGSize?) {
         value = value ?? nextValue()
     }
 }
 
+// View containing tuner bar
 struct Tunemeter: View {
 
     @State var width: CGFloat = 0
@@ -20,20 +22,24 @@ struct Tunemeter: View {
     @State var xOffset: CGFloat = 0
     @State var yOffset: CGFloat = 0
     
+    @Binding var displayLetters: Bool
     @Binding var frequency: Float
     @Binding var temperament: Float
     @Binding var rootFrequency: Float
     
+    // The nearest note to the current frequency
     var nearestNote: Note {
         return Note(temperament: self.temperament, rootFrequency: self.rootFrequency, frequency: self.frequency)
     }
     
+    // Error of the current frequency to the nearest note
     var error: Float {
         let interval = frequency / nearestNote.frequency
         let halfSemitoneRatio = pow(2, 1 / (temperament * 2))
         return log(interval) / log(halfSemitoneRatio)
     }
     
+    // Labels for the nearest note plus the two notes below and the two notes above
     var noteLabels: [String] {
         let center = Note(temperament: self.temperament, rootFrequency: self.rootFrequency, frequency: self.frequency)
         let farLeft = center.getRelatedNote(stepsAway: -2)
@@ -41,7 +47,11 @@ struct Tunemeter: View {
         let right = center.getRelatedNote(stepsAway: 1)
         let farRight = center.getRelatedNote(stepsAway: 2)
         
-        return [farLeft.description, left.description, center.description, right.description, farRight.description]
+        if displayLetters {
+            return [farLeft.letterDescription, left.letterDescription, center.letterDescription, right.letterDescription, farRight.letterDescription]
+        } else {
+            return [farLeft.numberDescription, left.numberDescription, center.numberDescription, right.numberDescription, farRight.numberDescription]
+        }
     }
     
     var centerBarWidth : CGFloat {
@@ -59,6 +69,7 @@ struct Tunemeter: View {
             .foregroundColor(ColorPalette.lightGray)
             .opacity(0.2)
             
+            // Note labels enumerated explicitly because compiler could not type-check ForEach in time
             Text("\(noteLabels[0])")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -84,7 +95,7 @@ struct Tunemeter: View {
                 .fontWeight(.bold)
                 .foregroundColor(ColorPalette.lightGray)
                 .offset(x: 2 * self.width / 3.0 - CGFloat(error) * self.width / 6.0)
-
+            
         }.background(GeometryReader { proxy in
             Color.clear.preference(key: SizeKey.self, value: proxy.size)
         }).onPreferenceChange(SizeKey.self) { size in
@@ -98,47 +109,6 @@ struct Tunemeter: View {
 
 struct Tunemeter_Previews: PreviewProvider {
     static var previews: some View {
-        Tunemeter(frequency: .constant(450.0), temperament: .constant(7), rootFrequency: .constant(300))
-    }
-}
-
-struct Note {
-    var temperament: Float
-    var rootFrequency: Float
-    
-    var octave: Int
-    var noteNumber: Int
-    
-    var frequency: Float
-    
-    init(temperament: Float, rootFrequency: Float, frequency: Float) {
-        self.temperament = temperament
-        self.rootFrequency = rootFrequency
-        
-        octave = Int(floor(log2f(frequency / rootFrequency)))
-        let reducedFrequency = frequency / pow(2, Float(octave))
-        let interval = reducedFrequency / rootFrequency
-        let semitoneRatio = pow(2, 1 / temperament)
-        noteNumber = Int(round(log(interval) / log(semitoneRatio)))
-        
-        if noteNumber == Int(temperament) {
-            octave += 1
-            noteNumber = 0
-        }
-        
-        self.frequency = rootFrequency * pow(2, Float(octave)) * pow(semitoneRatio, Float(noteNumber))
-    }
-    
-    public func getRelatedNote(stepsAway: Int) -> Note {
-        let semitoneRatio = pow(2, 1 / temperament)
-        let relatedFrequency = frequency * pow(semitoneRatio, Float(stepsAway))
-        
-        return Note(temperament: self.temperament, rootFrequency: self.rootFrequency, frequency: relatedFrequency)
-    }
-    
-    public var description: String {
-        let subScriptCode = 0x2080 + (octave + 4)
-        let subScript = Unicode.Scalar(subScriptCode)
-        return "\(noteNumber + 1)\(subScript ?? "₀")"
+        Tunemeter(displayLetters: .constant(false), frequency: .constant(450.0), temperament: .constant(7), rootFrequency: .constant(300))
     }
 }

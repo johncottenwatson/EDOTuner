@@ -26,6 +26,7 @@ struct ColorPalette {
     static let green = Color(red: 60 / 255, green: 200 / 255, blue: 70 / 255)
 }
 
+// Returns the color a given amount betweeen two given colors
 func colorLerp(color1: Color, color2: Color, amount: Float) -> Color {
 
     let antiAmount = 1.0 - amount

@@ -1,2 +1,2 @@
 # EDOTuner
-Make sure to add AudioKit.xcframework before running locally
+NOTE: AudioKit.xcframework is gitignored

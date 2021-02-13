@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct TunerApp: App {
+    
+    let userData = UserData()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(userData)
+                .onAppear() {
+                    userData.sessionNumber += 1
+                }
         }
     }
 }

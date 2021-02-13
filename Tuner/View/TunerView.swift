@@ -142,7 +142,7 @@ struct TunerView: View {
                 Text("Frequency:")
                     .font(.title2)
                     .foregroundColor(ColorPalette.darkGray)
-                Text("\(Int(tuner.frequency)) Hz")
+                Text("\(Int(tuner.dampedFrequency)) Hz")
                     .font(.title2)
                     .foregroundColor(ColorPalette.blue)
             }.padding(.bottom, 5)

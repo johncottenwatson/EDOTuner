@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @EnvironmentObject var userData: UserData
     @ObservedObject var tuner = Tuner()
     
     @State var ableToSwitch = false
@@ -32,6 +33,11 @@ struct ContentView: View {
         } else {
             TunerView(tuner: tuner)
                 .transition(.opacity)
+                .onAppear() {
+                    if userData.sessionNumber == 5 {
+                        StoreReviewManager.requestReview()
+                    }
+                }
         }
     }
     

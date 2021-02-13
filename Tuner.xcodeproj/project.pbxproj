@@ -12,7 +12,9 @@
 		EF3B0E7125606B9E007C6C62 /* Tunemeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3B0E7025606B9E007C6C62 /* Tunemeter.swift */; };
 		EF74385C25B927FA00C884AF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF74385B25B927FA00C884AF /* Note.swift */; };
 		EF8862BB255F2FDA00F070E6 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8862BA255F2FDA00F070E6 /* Tuner.swift */; };
-		EFD6C5F225B7FBC6000C4AC2 /* AudioKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFD6C5EF25B7FBBB000C4AC2 /* AudioKit.xcframework */; };
+		EF9A601425D6F9B4000E5243 /* AudioKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9A601325D6F9B4000E5243 /* AudioKit.xcframework */; };
+		EF9A601625D6FB1C000E5243 /* StoreReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9A601525D6FB1C000E5243 /* StoreReviewManager.swift */; };
+		EF9A601825D6FBCD000E5243 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9A601725D6FBCD000E5243 /* UserData.swift */; };
 		EFF2E5F8255EFAF30099230F /* TunerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2E5F7255EFAF30099230F /* TunerApp.swift */; };
 		EFF2E5FA255EFAF30099230F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF2E5F9255EFAF30099230F /* ContentView.swift */; };
 		EFF2E5FC255EFAFF0099230F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFF2E5FB255EFAFF0099230F /* Assets.xcassets */; };
@@ -38,7 +40,9 @@
 		EF3B0E7025606B9E007C6C62 /* Tunemeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tunemeter.swift; sourceTree = "<group>"; };
 		EF74385B25B927FA00C884AF /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EF8862BA255F2FDA00F070E6 /* Tuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
-		EFD6C5EF25B7FBBB000C4AC2 /* AudioKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AudioKit.xcframework; sourceTree = "<group>"; };
+		EF9A601325D6F9B4000E5243 /* AudioKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AudioKit.xcframework; sourceTree = "<group>"; };
+		EF9A601525D6FB1C000E5243 /* StoreReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewManager.swift; sourceTree = "<group>"; };
+		EF9A601725D6FBCD000E5243 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		EFF2E5F4255EFAF30099230F /* Tuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF2E5F7255EFAF30099230F /* TunerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunerApp.swift; sourceTree = "<group>"; };
 		EFF2E5F9255EFAF30099230F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD6C5F225B7FBC6000C4AC2 /* AudioKit.xcframework in Frameworks */,
+				EF9A601425D6F9B4000E5243 /* AudioKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +68,8 @@
 			children = (
 				EF8862BA255F2FDA00F070E6 /* Tuner.swift */,
 				EF74385B25B927FA00C884AF /* Note.swift */,
+				EF9A601525D6FB1C000E5243 /* StoreReviewManager.swift */,
+				EF9A601725D6FBCD000E5243 /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,7 +89,7 @@
 		EFF2E5EB255EFAF30099230F = {
 			isa = PBXGroup;
 			children = (
-				EFD6C5EF25B7FBBB000C4AC2 /* AudioKit.xcframework */,
+				EF9A601325D6F9B4000E5243 /* AudioKit.xcframework */,
 				EFF2E5F6255EFAF30099230F /* Tuner */,
 				EFF2E5F5255EFAF30099230F /* Products */,
 			);
@@ -190,8 +196,10 @@
 				EFF2E5FA255EFAF30099230F /* ContentView.swift in Sources */,
 				EF8862BB255F2FDA00F070E6 /* Tuner.swift in Sources */,
 				EF74385C25B927FA00C884AF /* Note.swift in Sources */,
+				EF9A601825D6FBCD000E5243 /* UserData.swift in Sources */,
 				EFF2E5F8255EFAF30099230F /* TunerApp.swift in Sources */,
 				EF122DC12561863600F7995F /* IntroPageView.swift in Sources */,
+				EF9A601625D6FB1C000E5243 /* StoreReviewManager.swift in Sources */,
 				EF3B0E7125606B9E007C6C62 /* Tunemeter.swift in Sources */,
 				EF122DC325618F8400F7995F /* TunerView.swift in Sources */,
 			);
@@ -322,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"Tuner/Preview Content\"";
 				DEVELOPMENT_TEAM = AF6W8QRL4J;
 				ENABLE_PREVIEWS = YES;
@@ -332,7 +340,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = "JohnWatson.edo-tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -347,7 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_ASSET_PATHS = "\"Tuner/Preview Content\"";
 				DEVELOPMENT_TEAM = AF6W8QRL4J;
 				ENABLE_PREVIEWS = YES;
@@ -357,7 +365,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_BUNDLE_IDENTIFIER = "JohnWatson.edo-tuner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
